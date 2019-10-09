@@ -1,0 +1,317 @@
+/*! == MEDIA QUERIES == */
+
+@each $name, $size in $breakpoints {
+	
+	@media (max-width: #{$size}) {
+		
+		@for $i from 1 through $col-count {
+			
+			.container.cols-#{$name}-#{$i} >div {
+				grid-column: span $i;
+			}
+		}
+	}
+}
+
+.menu-trigger {
+    display: none;
+}
+
+/*===========EXTRA LARGE (1600px)==========*/
+
+@media only screen and (max-width: 1600px) {
+/*body:before {
+  content: 'LARGE';
+  position: fixed;
+  z-index: 9999;
+  top:0;
+}*/
+ /*---GLOBALS---*/ 
+
+/*---HEADER---*/ 
+
+/*---CONTENT---*/
+
+/*---FOOTER---*/
+
+}/*---end large mq---*/
+
+/*===========LARGE (1200px)==========*/
+
+@media only screen and (max-width: 1200px) {
+/*body:before {
+  content: 'LARGE';
+  position: fixed;
+  z-index: 9999;
+  top:0;
+}*/
+ /*---GLOBALS---*/ 
+
+/*---HEADER---*/ 
+
+/*---CONTENT---*/
+
+/*---FOOTER---*/
+
+}/*---end large mq---*/
+
+
+/*===========MEDIUM (992px)==========*/
+
+@media only screen and (max-width: 1000px) {
+/*  body:before {
+    content: 'MEDIUM';
+    position: fixed;
+    z-index: 9999;
+    top:0;
+  }*/
+  
+ /*---GLOBALS---*/ 
+
+body {
+    font-size: 0.9em;
+}
+ 
+ /*---HEADER---*/
+
+.menu-trigger {
+    display: block;
+}
+
+.primary-menu {
+    display: none;
+}
+
+header .brand-logo {
+    border-left:none;
+}
+
+/*---CONTENT---*/
+
+.hero .secondary {
+    display:none;
+}
+
+/*---FOOTER---*/
+  
+}/*---end medium mq---*/
+
+
+
+/*===========SMALL (768px)==========*/
+
+@media only screen and (max-width: 768px) {
+/*  body:before {
+    content: 'SMALL';
+    position: fixed;
+    z-index: 9999;
+    top:0;
+  }*/
+
+/*---GLOBALS---*/
+
+body {
+  font-size: 0.8em;
+}
+
+/*---HEADER---*/
+
+
+/*---CONTENT---*/
+
+
+
+/*---FOOTER---*/
+
+
+
+}/*---end small mq---*/
+
+/*===========EXTRA SMALL (576px)==========*/
+
+@media only screen and (max-width: 576px) {
+/*  body:before {
+    content: 'EXTRA SMALL';
+    position: fixed;
+    z-index: 9999;
+    top:0;
+  }*/
+  
+/*---GLOBALS---*/
+
+body {
+  font-size: 0.7em;
+}
+
+.site-wrapper {
+    margin-top: 55px;
+}
+
+p {
+    font-size: 1.3em;
+}
+
+.heading__xl {
+    font-size: 3em;
+    line-height: 1.1em;
+}
+
+.site-wrapper .container.cols-8-4 .col:nth-of-type(1n) {
+    grid-column: span 12;
+}
+
+.site-wrapper .container.cols-4>div,
+footer .container.cols-4>div {
+    -ms-grid-column-span: 4;
+    grid-column: span 12;
+}
+
+/*---HEADER---*/
+
+header .brand-logo a {
+    width: 220px;
+}
+
+.menu-trigger i {
+    font-size: 2em;
+}
+
+header .contact-section,
+header .secondary-bar {
+    display: none;
+}
+
+header .menu-trigger {
+    margin-top: 0em;
+    margin-left: 1em;
+}
+
+ul.primary-menu {
+    position: absolute;
+    top: 52px;
+    width: 100%;
+    background: #272727;
+    margin: 0;
+    left: 0;
+    padding: 1em;
+    &.show {
+        display: block;
+    }
+}
+
+.imagemapbox {
+    display: none;
+}
+
+.countries-wrapper {
+    width: 100vw;
+    display: block;
+}
+
+.countries-wrapper .menu-item-has-children>a {
+    padding: 0.5em 0.25em;
+    font-size: 0.65em;
+}
+
+.countries-wrapper li {
+    width: 39%;
+}
+
+.countries-wrapper .countries.menu {
+    margin-top: 3em;
+    margin-right: 0;
+}
+
+.what-wrapper.expand, .what-wrapper:hover {
+    max-height: 100vh;
+}
+
+.inspire-menu {
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-end;
+    padding-top: 2em;
+    .menu-item .image {
+        height: 0;
+    }
+}
+
+.more.menu>ul {
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+/*---CONTENT---*/
+
+.hero {
+    height: calc(100vh - 60px);
+    
+    .container {
+        height: 150%;
+        align-self: flex-end;
+    }    
+}
+
+/*---CONTENT---*/
+
+article.featured .content {
+    width: 85%;
+    margin: -10em auto 0;
+    padding: 2em 1em;
+    .heading__lg {
+        font-size: 1.75em;
+    }
+    .meta {
+        margin: 0 0 1em;
+        font-size: 0.75em;
+    }
+}
+
+.single article {
+    width: auto;
+    margin: -5em 0;
+    padding: 2em;
+    }
+
+/*---FOOTER---*/
+
+.footer-leaders .item p {
+    padding-left: 3em;
+}
+
+.trustpilot {
+    max-width: 30%;
+}
+
+.cols-2.logo-panel .col {
+    grid-column: span 6;
+}
+
+.container .col.social {
+    grid-column: span 12;
+    padding:1em 0;
+}
+
+.footer-logos .container .col {
+    grid-column: span 6;
+}
+
+.socket {
+    text-align: center;
+    padding-bottom: 2em;
+    .right {
+        text-align: center;
+    }
+    
+    p {
+        margin:0;
+    }
+}
+
+.footer-accreds .social i {
+    padding: 0 0.5em;
+    font-size: 2.5em;
+  }  
+
+}/*---end extra small mq---*/
+
