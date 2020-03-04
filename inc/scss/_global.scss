@@ -2,7 +2,7 @@
 html {
     font-size: 16px;
 }
- 
+
 html,
 body {
     min-height: 100vh;
@@ -25,7 +25,7 @@ main {
 p {
     font-size: 1em;
     line-height: 1.5em;
-    font-weight: 300;  
+    font-weight: 300;
 }
 
 a {
@@ -34,7 +34,7 @@ a {
     color: $brand-primary;
     text-decoration: none;
     transition:color 0.3s ease;
-    
+
     i {
         line-height: 1.2em;
         vertical-align: bottom;
@@ -44,8 +44,8 @@ a {
 
 p a {
     position: relative;
-    font-weight: 400;
-    
+    font-weight: 700;
+
     &:before {
         content: '';
         position: absolute;
@@ -56,7 +56,7 @@ p a {
         background: $brand-primary;
         transition: width 0.5s ease;
     }
-    
+
     &:hover:before {
         width:100%;
     }
@@ -95,16 +95,16 @@ h5 {
     font-weight: 300;
     letter-spacing: 0.05em;
     color: $brand-dark-grey;
-    
+
     &__brand-font {
         font-family: $brand-font;
         font-weight: 400;
     }
-    
+
     &__caps {
         text-transform: uppercase;
     }
-    
+
     &__light {
         color: white;
     }
@@ -112,7 +112,7 @@ h5 {
     &__secondary-color {
       color: $brand-secondary;
     }
-    
+
     &__tertiary-color {
       color: $brand-tertiary;
     }
@@ -123,7 +123,7 @@ h5 {
         text-align: center;
         border-bottom: 2px dashed $brand-secondary;
     }
-    
+
     &__xxl {
         font-size: 6.5em;
     }
@@ -132,29 +132,29 @@ h5 {
         font-size: 4em;
         line-height: 1.2em;
     }
-    
-    &__lg {      
+
+    &__lg {
         font-size: 2.5em;
-    }  
-    
-    &__md {
-        font-size: 1.5em;    
-    }   
-    
-    &__sm {
-        font-size: 1em;    
     }
-    
+
+    &__md {
+        font-size: 1.5em;
+    }
+
+    &__sm {
+        font-size: 1em;
+    }
+
     &__xs {
-        font-size: 0.75em;        
-    }   
+        font-size: 0.75em;
+    }
 
 }
 
 input {
 	border-radius: 0;
 }
- 
+
 .brand-line {
 	padding-bottom: 0.5em;
 	border-bottom: 2px dashed rgba($brand-primary, 0.5);
@@ -164,7 +164,7 @@ input {
 	padding-bottom: 0.5em;
 	border-bottom: 2px dashed rgba(white, 0.5);
 }
- 
+
 /*===========HEADER==========*/
 
 .site-wrapper {
@@ -175,42 +175,42 @@ header {
     position: fixed;
     top:0;
     width: 100%;
-    z-index: 500;  
+    z-index: 500;
     color: white;
-    
+
     a {
         color: white;
     }
-    
+
     .menu-trigger {
         position: relative;
-        margin-top:1em;  
+        margin-top:1em;
         z-index: 1000;
     }
-    
+
     .brand {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-        
+
         a {
             display: block;
             height: 4.5em;
             text-align: center;
             transition: height 0.5s ease;
-            
+
             img {
                 display: inline-block;
-                height: 100%;    
+                height: 100%;
             }
         }
     }
-    
+
 }
 
 nav {
-    background: $brand-primary;
-    
+    background: $header-color;
+
     .actions-nav .button {
 		padding: 0.5em;
 		display: block;
@@ -218,7 +218,7 @@ nav {
 		width: 180px;
 		font-size: 0.9em;
 		color: $brand-primary;
-		
+
 		&:first-of-type {
 			margin-bottom: 1em;
 			text-transform: none;
@@ -236,41 +236,41 @@ nav {
 .nav-menu {
 	margin-right: 4em;
 	opacity: 0.7;
-    
-    ul {  
+
+    ul {
         height: 100%;
         margin: 0;
         padding: 0;
         list-style: none;
     }
-    
+
     .top-menu {
 	    display: grid;
 	    grid-template-columns: 35% 65%;
-	    
+
 	    .search {
 			display: flex;
 			justify-content: flex-start;
 			align-items: center;
-			
+
 			div {
 				flex-grow: 1;
 				display: flex;
 				max-width: 0;
 				overflow: hidden;
-				
+
 				&.visible {
 					max-width: 400px;
 				}
 			}
-			
+
 		    input {
 			    outline: none;
 			    font-size: 0.8em;
 			    flex-grow: 1;
 				margin-left: 0.5em;
 		    }
-		    
+
 		    button {
 				font-size: 0.8em;
 				border: 1px solid white;
@@ -281,40 +281,40 @@ nav {
 				color: white;
 				cursor: pointer;
 		    }
-		    
+
 		    i {
 			    cursor: pointer;
 		    }
 	    }
     }
-    
+
     .mainMenu-top {
-	    
+
 	    ul {
 		    text-align: right;
-		    
+
 		    li {
 				display: inline-block;
 				font-size: 0.8em;
 				padding: 0.5em 0 0.5em 4em;
 			}
 	    }
-	    
+
     }
-    
+
     .mainMenu-bottom {
 	    border-top: 2px dashed white;
-	    
+
 	    ul {
 		    display: flex;
 			justify-content: space-between;
-			
+
 			li {
 				@include gridCenter;
 	            height:100%;
 	            text-transform: uppercase;
 	            font-size: 1em;
-	            
+
 	            a {
 	                padding-top: 1.5em;
 	            }
@@ -331,9 +331,9 @@ footer {
 
 .pre-socket {
     background: $brand-primary;
-    
+
     .container {
-	    
+
 	    h3 {
 		    font-size: 1.5em;
 	    }
@@ -344,19 +344,19 @@ footer {
 	background: darken($brand-primary, 5%);
     font-size: 0.75em;
     color: white;
-    
+
     a {
         color: white;
-        
+
         &:hover {
             color: $brand-secondary;
         }
     }
-    
+
     i {
       margin-right: 1em;
     }
-        
+
     &__colophon {
 
       a {
@@ -366,9 +366,9 @@ footer {
         color: white;
       }
     }
-    
+
     .socials {
         text-align: right;
     }
-    
+
   }

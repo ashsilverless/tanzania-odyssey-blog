@@ -1,11 +1,11 @@
 <?php
 /**
  *
- * @package tob
+ * @package aob
  */
 get_header();?>
 
-    <?php 
+    <?php
         $first_grid_query = new WP_Query(
         array(
             'posts_per_page'=>1
@@ -14,18 +14,18 @@ get_header();?>
         while ($first_grid_query->have_posts()) : $first_grid_query->the_post();
             $imageid = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 $featimage = $imageid['0'];
-        endwhile; 
-    wp_reset_postdata(); 
-    ?>  
+        endwhile;
+    wp_reset_postdata();
+    ?>
 
 <div class="hero" style="background-image: url(<?php echo $featimage; ?>);">
-    
+
     <div class="container cols-8-4">
-    
-    
+
+
     <div class="col align-vert-b pb3">
         <div class="main">
-    <?php 
+    <?php
         $first_grid_query = new WP_Query(
         array(
             'posts_per_page'=>1
@@ -36,18 +36,18 @@ $featimage = $imageid['0'];
             the_title('<h2 class="heading heading__xl">', '</h2>');?>
             <h3 class="heading heading__sm"><?php the_excerpt();?></h3>
             <a href="<?php the_permalink();?>" class="button">Read More <span>&xrarr;</span></a>
-        <?php endwhile; 
-    wp_reset_postdata(); 
-    ?>  
+        <?php endwhile;
+    wp_reset_postdata();
+    ?>
         </div>
     </div>
-    
+
     <div class="col">
         <div class="secondary">
             <div class="section-title">
                 <h4 class="heading heading__sm heading__caps heading__brand-font">Latest Posts</h4>
             </div>
-            <?php 
+            <?php
                 $first_grid_posts_ids = wp_list_pluck( $first_grid_query->posts, 'ID' );
                 $second_grid_query = new WP_Query(
                     array(
@@ -57,27 +57,29 @@ $featimage = $imageid['0'];
                 );
                 while ($second_grid_query->have_posts()) : $second_grid_query->the_post();
                 $imageid = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );$featimage = $imageid['0'];?>
-                
+
                 <a href="<?php the_permalink();?>" class="article-wrapper">
                 <article>
                     <div class="image" style="background-image: url(<?php echo $featimage; ?>);"></div>
-                    
+
                     <div class="content">
-                        
+
                     <?php the_title('<h2 class="heading heading__sm">', '</h2>');?>
-                    <p class="category">Posted In <?php                         foreach((get_the_category()) as $category){
-                            echo $category->name;
-                            }?> on <?php the_date('jS F Y', '', ''); ?></p>
+                    <p class="category">Posted In
+                        <?php $category = get_the_category();
+                        echo $category[0]->cat_name;?> on
+                        <?php the_date('jS F Y', '', ''); ?>
+                    </p>
                     </div>
-                    
+
                 </article>
                 </a>
-                <?php endwhile; 
-            wp_reset_postdata(); 
-            ?>        
+                <?php endwhile;
+            wp_reset_postdata();
+            ?>
         </div>
     </div>
-    
+
     </div><!--c-->
 
 </div><!--hero-->
@@ -103,17 +105,17 @@ $featimage = $imageid['0'];
 
         <article class="featured">
             <?php
-            query_posts('posts_per_page=1&cat=2363');
+            query_posts('posts_per_page=1&cat=5');
             if ( have_posts() ) while ( have_posts() ) : the_post();
-            $featuredImage = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'small' ); ?>
-        
+            $featuredImage = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' ); ?>
+
             <div class="banner-image" style="background-image: url(<?php echo $featuredImage['0']; ?>);">
                 <div class="label">
                     <p><i class="fas fa-star"></i></i> Featured Article</p>
                 </div>
-            
+
             </div>
-        
+
             <div class="content">
                 <h2 class="heading heading__lg"><?php the_title();?></h2>
                 <p class="meta">Posted on <?php the_date('jS F Y', '', ''); ?></p>
@@ -121,10 +123,10 @@ $featimage = $imageid['0'];
                     <?php get_template_part('template-parts/itineraries');?>
                 	<?php get_template_part('template-parts/related', 'articles');?>
             </div>
-        
+
             <?php endwhile;
                 wp_reset_query();?>
-            
+
         </article>
 
     </div>

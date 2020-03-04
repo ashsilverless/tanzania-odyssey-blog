@@ -1,5 +1,5 @@
 <div class="itineraries">
-    <a href="https://www.africaodyssey.com/itineraries" class="button">
+    <a href="https://www.southamericaodyssey.com/itineraries" class="button">
         <i class="fas fa-list-alt"></i>
         <span>Suggested Itineraries</span>
         </a>

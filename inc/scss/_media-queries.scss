@@ -1,11 +1,11 @@
 /*! == MEDIA QUERIES == */
 
 @each $name, $size in $breakpoints {
-	
+
 	@media (max-width: #{$size}) {
-		
+
 		@for $i from 1 through $col-count {
-			
+
 			.container.cols-#{$name}-#{$i} >div {
 				grid-column: span $i;
 			}
@@ -26,9 +26,9 @@
   z-index: 9999;
   top:0;
 }*/
- /*---GLOBALS---*/ 
+ /*---GLOBALS---*/
 
-/*---HEADER---*/ 
+/*---HEADER---*/
 
 /*---CONTENT---*/
 
@@ -45,9 +45,9 @@
   z-index: 9999;
   top:0;
 }*/
- /*---GLOBALS---*/ 
+ /*---GLOBALS---*/
 
-/*---HEADER---*/ 
+/*---HEADER---*/
 
 /*---CONTENT---*/
 
@@ -58,20 +58,20 @@
 
 /*===========MEDIUM (992px)==========*/
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
 /*  body:before {
     content: 'MEDIUM';
     position: fixed;
     z-index: 9999;
     top:0;
   }*/
-  
- /*---GLOBALS---*/ 
+
+ /*---GLOBALS---*/
 
 body {
     font-size: 0.9em;
 }
- 
+
  /*---HEADER---*/
 
 .menu-trigger {
@@ -85,15 +85,57 @@ body {
 header .brand-logo {
     border-left:none;
 }
+header .menu-trigger {
+    margin-top: 0em;
+    margin-left: 0.5em;
+    font-size: 2em;
+}
+ul.primary-menu {
+    position: absolute;
+    top: 74px;
+    width: 100%;
+    background: $header-color;
+    margin: 0;
+    left: 0;
+    padding: 1em 2em;
+    &.show {
+        display: block;
+    }
+}
 
+
+.countries-wrapper {
+    width: 100%;
+    grid-gap: 2em;
+}
+.countries-wrapper li {
+    width: 30%;
+}
+
+.inspire-menu {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.col > .more-menu {
+	padding-top:2em;
+}
 /*---CONTENT---*/
+.site-wrapper {
+    margin-top: 115px;
+}
 
 .hero .secondary {
     display:none;
 }
-
+.hero .main {
+    position: absolute;
+    z-index: 50;
+    bottom: 2em;
+    left: 2em;
+	width:70%;
+}
 /*---FOOTER---*/
-  
+
 }/*---end medium mq---*/
 
 
@@ -111,18 +153,23 @@ header .brand-logo {
 /*---GLOBALS---*/
 
 body {
-  font-size: 0.8em;
+  font-size: 0.9em;
 }
 
 /*---HEADER---*/
 
 
 /*---CONTENT---*/
-
+.site-wrapper {
+    margin-top: 130px;
+}
 
 
 /*---FOOTER---*/
-
+.footer-accreds img {
+    max-height: 60px;
+    max-width: 6em;
+}
 
 
 }/*---end small mq---*/
@@ -136,11 +183,11 @@ body {
     z-index: 9999;
     top:0;
   }*/
-  
+
 /*---GLOBALS---*/
 
 body {
-  font-size: 0.7em;
+  font-size: 0.9em;
 }
 
 .site-wrapper {
@@ -148,12 +195,16 @@ body {
 }
 
 p {
-    font-size: 1.3em;
+    font-size: 1em;
 }
 
 .heading__xl {
     font-size: 3em;
     line-height: 1.1em;
+}
+
+.heading__lg {
+    font-size: 2em;
 }
 
 .site-wrapper .container.cols-8-4 .col:nth-of-type(1n) {
@@ -165,35 +216,138 @@ footer .container.cols-4>div {
     -ms-grid-column-span: 4;
     grid-column: span 12;
 }
-
+.container.cols-sm-12>div.col {
+	grid-column:span 12 !important;
+}
 /*---HEADER---*/
+
+.single article .blog-nav {
+	width:auto;
+	height:auto;
+	margin-top: -7em;
+	top: 6.5em;
+	z-index: 9999;
+	.inner {
+		left:0;
+		width: calc(100% + 4em);
+		margin-left: -2em;
+		margin-right: -2em;
+		display: flex;
+		flex-direction: row;
+	}
+	.home,
+	.cats,
+	.this-cat {
+		position: relative;
+		display: flex;
+	    width:33%;
+		flex-grow:1;
+		padding:0.25em;
+		>div {
+			display: flex;
+			align-self: center;
+			width:100%;
+			justify-content: center;
+		}
+	}
+	.this-cat i {
+		display: none;
+	}
+}
+
+
+nav > .container {
+	>.col {
+		/*position: relative;*/
+	}
+	> .col:nth-of-type(2) {
+		display: none;
+	}
+}
+
+.mobile-view {
+	display: inline-block;
+}
+
+header .secondary-bar {
+	display: block;
+	.container > .col:nth-of-type(1) {
+		text-align: center;
+	}
+	.container > .col:nth-of-type(2),
+	.container > .col:nth-of-type(3) {
+		display: none;
+	}
+}
+
+header .secondary-bar .telephone a {
+    margin-right: 0;
+    padding: 0 0.5em;
+}
 
 header .brand-logo a {
     width: 220px;
 }
 
-.menu-trigger i {
-    font-size: 2em;
+.more-wrapper {
+    left: 0;
+    width: 100%;
 }
 
-header .contact-section,
-header .secondary-bar {
+header .contact-section p {
+	border-bottom: none;
+}
+
+header .contact-section p:nth-of-type(2) {
     display: none;
 }
 
+.reduced-logo {
+	margin:1em 0;
+	svg {
+		height:2.5em;
+		margin-left: 1em;
+		vertical-align: bottom;
+		path {
+			fill:white;
+		}
+	}
+}
+
+.search-trigger {
+	position: absolute;
+    top: 1em;
+    left: 1em;
+    background: white;
+    width: 2em;
+    height: 2em;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 2em;
+	color: $brand-primary;
+}
+
+header .secondary-bar .search form {
+    margin: 0.5em;
+    font-size: 1.2em;
+}
+
+.telephone {
+	font-size: 0.85em;
+}
+
 header .menu-trigger {
+	display: inline-block;
     margin-top: 0em;
-    margin-left: 1em;
+    margin-left: 0.5em;
 }
 
 ul.primary-menu {
     position: absolute;
-    top: 52px;
+    top: 92px;
     width: 100%;
-    background: #272727;
     margin: 0;
     left: 0;
-    padding: 1em;
     &.show {
         display: block;
     }
@@ -242,16 +396,38 @@ ul.primary-menu {
 }
 
 /*---CONTENT---*/
+.search-results .posts {
+	grid-template-columns: 1fr;
+}
+.search-results .archive-heading {
+    top: 13em;
+    font-size: 0.5em;
+	text-align: center;
+}
+
+header .secondary-bar .search button {
+	right:0;
+	padding:0 1em 0 0;
+}
 
 .hero {
     height: calc(100vh - 60px);
-    
+
     .container {
         height: 150%;
         align-self: flex-end;
-    }    
+    }
+}
+.hero .main {
+    width: calc(100% - 3em);
+}
+.page-content {
+	margin-top:1em;
 }
 
+.itineraries {
+    grid-template-columns: 1fr;
+}
 /*---CONTENT---*/
 
 article.featured .content {
@@ -269,9 +445,12 @@ article.featured .content {
 
 .single article {
     width: auto;
-    margin: -5em 0;
+    margin: -1em 0;
     padding: 2em;
-    }
+	.content {
+		padding-top: 7em;
+	}
+}
 
 /*---FOOTER---*/
 
@@ -302,7 +481,7 @@ article.featured .content {
     .right {
         text-align: center;
     }
-    
+
     p {
         margin:0;
     }
@@ -311,7 +490,26 @@ article.featured .content {
 .footer-accreds .social i {
     padding: 0 0.5em;
     font-size: 2.5em;
-  }  
+  }
 
+  .footer-accreds {
+    grid-template-columns: repeat(5, 1fr);
+	.social.item {
+		grid-column:span 5;
+		margin:1em;
+	}
+	img {
+		max-width:4em;
+	}
+}
+.footer-logos .col {
+	text-align: center;
+	svg {
+		height: auto;
+		width:80%;
+	}
+}
+.socket {
+	padding:1em 0;
+}
 }/*---end extra small mq---*/
-

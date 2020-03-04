@@ -1,8 +1,8 @@
 <?php
 /**
- * tob functions and definitions
+ * aob functions and definitions
  *
- * @package tob
+ * @package aob
  */
 
 /** = Ditch Junk = */
@@ -13,15 +13,15 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 
 /** = Enqueue scripts and styles = */
 
-function tob_scripts() {
+function aob_scripts() {
 
-	wp_enqueue_style( 'tob-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'aob-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'tob-core-js', get_template_directory_uri() . '/inc/js/compiled.js', array('jquery'), true);
+	wp_enqueue_script( 'aob-core-js', get_template_directory_uri() . '/inc/js/compiled.js', array('jquery'), true);
 
 }
 
-add_action( 'wp_enqueue_scripts', 'tob_scripts' );
+add_action( 'wp_enqueue_scripts', 'aob_scripts' );
 
 /**= Add Menus =**/
 
@@ -163,7 +163,7 @@ add_action( 'admin_menu', 'remove_menus' );
 */
 function remove_admin_menus() {
    remove_menu_page( 'edit-comments.php' ); // Comments
-   remove_menu_page( 'tools.php' ); // Tools
+   //remove_menu_page( 'tools.php' ); // Tools
 }
 add_action( 'admin_menu', 'remove_admin_menus' );
 
